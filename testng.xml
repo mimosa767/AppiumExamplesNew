@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true"
-          name="/Users/spenn02/AppiumExamplesNew/src/main/java/package1/LongPress.java">
+    <test verbose="2" preserve-order="true" name="/Users/spenn02/AppiumExamplesNew/src/main/java/Package2">
         <classes>
-            <class name="package1.LongPress">
+            <class name="Package2.IOSBasics">
                 <methods>
-                    <include name="LongPressGesture"/>
+                    <include name="IOSBasicsTest"/>
+                </methods>
+            </class>
+            <class name="Package2.eCommerce_tc_1new">
+                <methods>
+                    <include name="FillForm_ErrorValidation"/>
+                    <include name="FillForm_PositiveFlow"/>
+                </methods>
+            </class>
+            <class name="Package2.eCommerce_tc_4_Hybrid">
+                <methods>
+                    <include name="FillForm"/>
                 </methods>
             </class>
         </classes>

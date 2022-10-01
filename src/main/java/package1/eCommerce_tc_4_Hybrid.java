@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -32,7 +33,7 @@ public class eCommerce_tc_4_Hybrid extends BaseTestEcommerce {
 
         driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")).click();
 //        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-//        wait.until(ExpectedConditions.attributeContains(driver.findElement(By.id("com.androidsample.generalstore:id/toolbar_title")), "text", "Cart"));
+//     wait.until(ExpectedConditions.attributeContains(driver.findElement(By.id("com.androidsample.generalstore:id/toolbar_title")), "text", "Cart"));
         Thread.sleep(2000);
         List<WebElement> productPrices = driver.findElements(By.id("com.androidsample.generalstore:id/productPrice"));
         int count = productPrices.size();
@@ -51,9 +52,11 @@ public class eCommerce_tc_4_Hybrid extends BaseTestEcommerce {
         Assert.assertEquals(totalSum, displayFormattedSum);
         WebElement ele = driver.findElement(By.id("com.androidsample.generalstore:id/termsButton"));
         longPressAction(ele);
+
         driver.findElement(By.id("android:id/button1")).click();
         driver.findElement(AppiumBy.className("android.widget.CheckBox")).click();
         driver.findElement(By.id("com.androidsample.generalstore:id/btnProceed")).click();
+
         Thread.sleep(8000);
         Set<String> contexts = driver.getContextHandles();
         for (String contextName : contexts) {
@@ -72,5 +75,7 @@ public class eCommerce_tc_4_Hybrid extends BaseTestEcommerce {
         driver.context("NATIVE_APP");
 
     }
+
+
 
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <groups>
+        <run>
+            <include name="Smoke"/>  //run only annotations marked with smoke
+        </run>
+    </groups>
+    <listeners>
+        <listener class-name="TestUtils.appiumListener"/>
+    </listeners>
+
+<!--    <test thread-count="3" preserve-order="true" name="Appium Listener Test">-->
+<!--        <classes>-->
+<!--            <class name="Package2.appiumListenerTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test thread-count="5" preserve-order="true" name="End to End Framework Test">
+        <classes>
+            <class name="Package2.eCommerce_tc_4_Hybrid"/>
+        </classes>
+    </test>
+
+    <test thread-count="5" preserve-order="true" name="Error Validations TEst">
+        <classes>
+            <class name="Package2.eCommerce_tc_1new"/>
+        </classes>
+    </test>
+
+    <test thread-count="5" preserve-order="true" name="iOSTest">
+        <classes>
+            <class name="Package2.IOSBasics"/>
+        </classes>
+    </test>
+
+
+
+</suite>
